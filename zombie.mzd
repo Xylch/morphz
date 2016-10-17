@@ -1,0 +1,14 @@
+CREEPER, None, Zombie, 2, None, None, None
+CREEPER, None, Zombie Duo, 2, None, None, None
+CREEPER, None, Zombie Trio, 1, None, None, None
+CREEPER, None, Zombie Quartet, 1, None, None, None
+
+KEEPER, None, Friend, 2, None, None, None
+
+#RULE, None, Friends No More, 1, None, None, FIELD MORPH ALL = 'Friend:Zombie'
+
+GOAL, None, We Are Zombies, 1, None, None, FIELD OWN PLAYER = 'Zombie&Zombie Duo&Zombie Trio&Zombie Quartet'
+
+ACTION, None, One Zombie Down, 1, None, None, FIELD KILL PLAYER = 'Zombie|Zombie Duo|Zombie Trio|Zombie Quartet'
+
+#ACTION, None, Some Name Here, 4, None, None, HAND MORPH ANY LEFT = 'Hello&Foo|Bar|World&Zebra&Kitty|Doggy|Racoon'

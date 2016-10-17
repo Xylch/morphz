@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<deck>
+	<card name="Draw 2" amount="2">
+		<type>rule</type>
+		<rules>
+			<limit>
+				<type>draw</type>
+				<amount>2</amount>
+			</limit>
+		</rules>
+	</card>
+	<card name="Keeper Limit 2" amount="2">
+		<type>rule</type>
+		<rules>
+			<limit>
+				<type>keeper</type>
+				<amount>2</amount>
+			</limit>
+		</rules>
+	</card>
+	<card name="Everybody Gets 1">
+		<type>action</type>
+		<rules>
+			<draw>#players</draw>
+			<give>
+				<to>all</to>
+				<location>hand</location>
+				<amount>even</amount>
+				<method>choose</method>
+			</give>
+		</rules>
+	</card>
+	<card name="Television">
+		<type>keeper</type>
+	</card>
+	<card name="Toaster">
+		<type>keeper</type>
+	</card>
+	<card name="Radioactive Potato">
+		<type>creeper</type>
+		<rules>
+			<nowin>true</nowin>
+			<change>
+				<goal>
+					<move>
+						<direction>counter-turn</direction>
+					</move>
+				</goal>
+			</change>
+		</rules>
+	</card>
+	<card name="The Appliances">
+		<type>goal</type>
+		<rules>
+			<cards>
+				<amount>all</amount>
+				<name>Television</name>
+				<name>Toaster</name>
+			</cards>
+		</rules>
+	</card>
+</deck>

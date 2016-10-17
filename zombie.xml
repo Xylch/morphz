@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<deck>
+	<card name="Zombie" amount="2">
+		<type>creeper</type>
+		<subtype>zombie</subtype>
+	</card>
+	<card name="Pair of Zombies" amount="2">
+		<type>creeper</type>
+		<subtype>zombie</subtype>
+		<description>Move this card to any other player if you kill a different Creeper during your turn.</description>
+	</card>
+	<card name="Zombie Trio" amount="2">
+		<type>creeper</type>
+		<subtype>zombie</subtype>
+			<description>When killed, this card is not discarded... it is instead moved to the player on your left or right.</description>
+		<rules>
+			<killed>
+				<move>
+					<location>field</location>
+					<direction>left|right</direction>
+				</move>
+			</killed>
+		</rules>
+	</card>
+	<card name="Zombie Quartet">
+		<type>creeper</type>
+		<subtype>zombie</subtype>
+		<description>When killed, this card is place on top of the draw pile instead of the discard pile.</description>
+		<rules>
+			<killed>
+				<move>
+					<location>draw</location>
+					<place>top</place>
+				</move>
+			</killed>
+		</rules>
+	</card>
+	<card name="Friend" amount="2">
+		<type>keeper</type>
+	</card>
+	<card name="Four, Three, Two, One">
+		<type>goal</type>
+		<description>You win if your Creepers include: a Zombie, a Pair of Zombies, a Zombie Trio, &amp; a Zombie Quartet.</description>
+		<rules>
+			<goal>
+				<cards>
+					<amount>all</amount>
+					<name>Zombie</name>
+					<name>Zombie Duo</name>
+					<name>Zombie Trio</name>
+					<name>Zombie Quartet</name>
+				</cards>
+			</goal>
+		</rules>
+	</card>
+	<card name="Boom! Headshot">
+		<type>action</type>
+		<description>Kill one of any Zombie Creeper.</description>
+		<rules>
+			<kill>
+				<cards>
+					<amount>1</amount>
+					<subtype>zombie</subtype>
+				</cards>
+			</kill>
+		</rules>
+	</card>
+	<card name="Dead Friends">
+		<type>rule</type>
+		<description>
+			All Friend Keepers in play are now considered to be Zombie Creepers (and NOT Keepers).
+			If you can kill a Creeper, you must target your Friend(s) before any regular Creepers.
+		</description>
+		<rules>
+			<new>
+				<morph>
+					<from>
+						<name>Friend</name>
+					</from>
+					<to>
+						<type>creeper</type>
+						<subtype>zombie</subtype>
+					</to>
+				</morph>
+				<override>
+					<rule>kill</rule>
+					<target>creeper</target>
+					<force>
+						<name>Friend</name>
+					</force>
+				</override>
+			</new>
+		</rules>
+	</card>
+</deck>
